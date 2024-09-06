@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museum Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -11,23 +12,42 @@
       padding: 0;
     }
     body {
-      font-family: 'Arial', sans-serif;
-      background-image: url("https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fuskd4x557wno7irs1q71.png");
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      background-image: url("https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg");
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
       height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-top: 60px; /* To prevent overlap */
+    }
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7); /* Dark background with some transparency */
+      padding: 15px 20px;
+      width: 100%;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
     .chatbot-container {
-      width: 400px;
-      height: 500px;
+      width: 350px;
+      height: 450px;
       background-color: white;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      position: relative;
+      position: fixed;
+      right: 45px;
+      bottom: 20px;
       overflow: hidden;
     }
     .chat-header {
@@ -70,13 +90,13 @@
       transition: 0.3s ease;
     }
     .chat-button:hover {
-      background-color: #005bbb;
+      background-color: #899bb2;
     }
     .chat-icon {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background-color: #0072ff;
+      position: fixed;
+      bottom: 7px;
+      right: 7px;
+      background-color: #9fa1a3;
       color: #fff;
       border-radius: 50%;
       padding: 15px;
@@ -94,13 +114,16 @@
 </head>
 <body>
 
+  <h1>Museum Tickets Made Easy: Chat with Us</h1>
+
   <div class="chatbot-container" id="chatbot-container">
     <div class="chat-header">Chat with Us</div>
     <div class="chat-content">
-      <iframe
+        <iframe
         allow="microphone;"
+        
         src="https://console.dialogflow.com/api-client/demo/embedded/d4f493e2-e765-47f7-aacd-6e7cd3526245">
-      </iframe>
+    </iframe>
     </div>
   </div>
 
